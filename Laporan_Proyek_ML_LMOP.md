@@ -1,19 +1,22 @@
----
+
 ## INFORMASI PROYEK
 
 **Judul Proyek:**  
-[(Contoh: "Klasifikasi Penyakit Daun Menggunakan CNN", "Prediksi Harga Rumah dengan Machine Learning", "Analisis Sentimen Ulasan Produk")]
+Analisis dan Klasifikasi Tingkat Kecukupan Fasilitas Kesehatan di Kabupaten/Kota Provinsi Jawa Timur Menggunakan Machine Learning
 
-**Nama Mahasiswa:** [Nama Lengkap]  
-**NIM:** [Nomor Induk Mahasiswa]  
-**Program Studi:** [Teknologi Informasi / Rekayasa Perangkat Lunak]  
-**Mata Kuliah:** [Nama Mata Kuliah]  
-**Dosen Pengampu:** [Nama Dosen]  
-**Tahun Akademik:** [Tahun/Semester]  
-**Link GitHub Repository:** [URL Repository]  
+
+**Anggota Kelompok:**
+1. Muhsyam Fahriel Septiansyah — 244311021
+2. Dila Alif Regita — 244311010
+
+**Program Studi:** D4 Teknologi Rekayasa Perangkat Lunak  
+**Mata Kuliah:** [Data Science]  
+**Dosen Pengampu:** [Gus Nanang Syaifuddiin, S.Kom., M.Kom.]  
+**Tahun Akademik:** 2026/2027  
+**Link GitHub Repository:** [https://github.com/FahRiel25/healthcare-facility-equity-jatim.git]  
 **Link Video Pembahasan:** [URL Video (YouTube/Drive)]  
-**SDG yang Dipilih:** [Nomor & nama Goal, misal: SDG 3 – Kehidupan Sehat dan Sejahtera]  
-**Target SDG yang Relevan:** [misal: Target 3.4 – mengurangi kematian dini akibat penyakit tidak menular]
+**SDG yang Dipilih:** SDG 3 – Kehidupan Sehat dan Sejahtera  
+**Target SDG yang Relevan:** Target 3.8 – mencapai cakupan kesehatan universal, termasuk akses terhadap pelayanan kesehatan esensial yang berkualitas.
 
 ---
 
@@ -58,12 +61,12 @@ Pada proyek ini, mahasiswa diharapkan dapat:
 ## 2. PROJECT OVERVIEW  **[L]**
 
 ### 2.1 Latar Belakang
-**Isi bagian ini dengan:**
-- Mengapa proyek ini penting?
-- Permasalahan umum pada domain terkait (misal: kesehatan, pendidikan, keuangan, pertanian, NLP, computer vision, dll.)
-- Manfaat proyek untuk pengguna, bisnis, atau penelitian
-- Studi literatur atau referensi ilmiah (minimal 1–2 sumber wajib)
-- Keterkaitan masalah dengan SDGs yang dipilih (dijabarkan di Bab 2.2)
+
+Kesehatan merupakan salah satu aspek penting dalam pembangunan manusia. Ketersediaan fasilitas kesehatan yang memadai dapat membantu masyarakat memperoleh pelayanan kesehatan, baik untuk kebutuhan promotif, preventif, maupun kuratif. Namun, jumlah fasilitas kesehatan yang tersedia pada suatu wilayah perlu dilihat bersama dengan jumlah penduduk yang harus dilayani. Wilayah dengan jumlah fasilitas yang besar belum tentu memiliki tingkat kecukupan yang tinggi apabila jumlah penduduknya juga besar. Sebaliknya, wilayah dengan jumlah fasilitas lebih sedikit dapat memiliki rasio fasilitas terhadap penduduk yang relatif lebih baik.
+
+Provinsi Jawa Timur terdiri atas kabupaten dan kota dengan karakteristik wilayah serta jumlah penduduk yang beragam. Perbedaan tersebut menjadi alasan penting untuk melakukan analisis tingkat kecukupan fasilitas kesehatan pada tingkat kabupaten/kota. Analisis ini dapat memberikan gambaran awal mengenai variasi ketersediaan fasilitas kesehatan antarwilayah dan membantu mengidentifikasi wilayah yang perlu mendapat perhatian lebih lanjut. Dalam proyek ini, fasilitas kesehatan yang dianalisis mencakup rumah sakit, puskesmas, dan klinik, serta tenaga kesehatan seperti dokter, perawat, dan bidan. Data jumlah penduduk digunakan sebagai konteks untuk menilai kecukupan relatif terhadap kebutuhan penduduk.
+
+Machine learning digunakan untuk mempelajari pola dari indikator fasilitas kesehatan dan karakteristik wilayah, kemudian mengklasifikasikan kabupaten/kota ke dalam kategori tingkat kecukupan. Pendekatan klasifikasi memungkinkan perbandingan beberapa model, mulai dari model baseline, model machine learning lanjutan, hingga model deep learning. Hasil klasifikasi diharapkan menjadi informasi pendukung analisis, bukan pengganti penilaian kebijakan atau standar pelayanan kesehatan.
 
 **Contoh referensi (berformat APA/IEEE):**
 > Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.
@@ -72,38 +75,29 @@ Pada proyek ini, mahasiswa diharapkan dapat:
 
 ### 2.2 Keterkaitan dengan SDGs (WAJIB)
 
-Ide proyek **berasal dari mahasiswa** dan harus selaras dengan **salah satu** dari 17 Sustainable Development Goals (daftar dan contoh inspirasi ada di Lampiran A).
+| Komponen | Jawaban |
+|---|---|
+| **SDG yang dipilih** | SDG 3 – Kehidupan Sehat dan Sejahtera (*Good Health and Well-Being*). |
+| **Target SDG** | Target 3.8, yaitu mencapai cakupan kesehatan universal dan akses terhadap pelayanan kesehatan esensial yang berkualitas. Target 3.c juga berkaitan sebagai konteks penguatan tenaga kesehatan. |
+| **Masalah nyata** | Ketersediaan fasilitas dan tenaga kesehatan tidak selalu sama antar kabupaten/kota. Perbedaan jumlah penduduk juga dapat menyebabkan jumlah fasilitas yang sama memiliki tingkat kecukupan relatif yang berbeda. |
+| **Peran ML** | Machine learning digunakan untuk mengklasifikasikan tingkat kecukupan fasilitas kesehatan berdasarkan indikator jumlah fasilitas, tenaga kesehatan, dan karakteristik penduduk/wilayah. |
+| **Indikator kontribusi** | Proyek menghasilkan kategori dan perbandingan tingkat kecukupan fasilitas kesehatan untuk  kabupaten/kota di Jawa Timur. Hasilnya dapat menjadi informasi awal untuk mengenali wilayah yang perlu dikaji lebih lanjut. Kontribusi terhadap SDG bersifat tidak langsung dan berupa dukungan informasi. |
+| **Pertimbangan etika** | Data agregat wilayah tidak digunakan untuk mengidentifikasi individu. Hasil klasifikasi tidak boleh dianggap sebagai penilaian mutlak kualitas layanan atau sebagai dasar tunggal pengambilan keputusan. Keterbatasan cakupan, tahun, dan kualitas data perlu dijelaskan agar tidak menimbulkan kesimpulan yang menyesatkan. |
 
-| Komponen | Pertanyaan Panduan | Jawaban Anda |
-|----------|--------------------|--------------|
-| **SDG yang dipilih** | Goal nomor berapa dan apa namanya? | [ ... ] |
-| **Target SDG** | Target (misal 3.4, 13.1) mana yang paling relevan? | [ ... ] |
-| **Masalah nyata** | Masalah konkret apa yang diangkat? Siapa yang terdampak? | [ ... ] |
-| **Peran ML** | Mengapa ML/DL cocok? Apa keputusan atau proses yang dibantu? | [ ... ] |
-| **Indikator kontribusi** | Bagaimana hasil model berkontribusi pada target SDG (langsung/tidak langsung)? | [ ... ] |
-| **Pertimbangan etika** | Risiko bias, privasi, atau dampak salah prediksi? | [ ... ] |
-
-**Sumber ide:** [Jelaskan dari mana ide muncul: pengalaman pribadi, lingkungan sekitar, isu lokal/nasional, dll.]
-
+**Sumber ide:** Ide proyek berasal dari ketertarikan terhadap isu pemerataan akses layanan kesehatan di lingkungan sekitar dan keinginan memanfaatkan data terbuka untuk membandingkan kondisi kabupaten/kota di Provinsi Jawa Timur.
 ### 2.3 Ringkasan Alur Lifecycle Proyek
-Jelaskan dalam 1 paragraf pendek bagaimana proyek Anda melewati tahap L → M → O → P (dan iterasi apa yang direncanakan).
+Proyek dimulai dari tahap **Learning Problem (L)** dengan menetapkan masalah, tujuan klasifikasi, wilayah analisis, serta mengumpulkan dan memahami data fasilitas kesehatan, tenaga kesehatan, dan penduduk kabupaten/kota di Jawa Timur. Data selanjutnya diperiksa dan disiapkan melalui proses pembersihan, transformasi, pembentukan indikator, serta pembagian data. Pada tahap **Model Design (M)**, dirancang tiga model, yaitu Decision Tree sebagai baseline, Random Forest sebagai model machine learning lanjutan, dan Multilayer Perceptron (MLP) sebagai model deep learning. Tahap **Optimization (O)** dilakukan melalui tuning hyperparameter dan perbandingan konfigurasi training. Pada tahap **Predict & Evaluate (P)**, model dievaluasi menggunakan data test dengan metrik klasifikasi yang sesuai. Hasil evaluasi digunakan untuk membandingkan model dan menentukan perbaikan pada tahap sebelumnya.
 
-**[Tulis ringkasan alur lifecycle proyek Anda]**
 
 ---
 
 ## 3. BUSINESS UNDERSTANDING / PROBLEM UNDERSTANDING  **[L]**
 
 ### 3.1 Problem Statements
-Tuliskan 2–4 pernyataan masalah yang jelas dan spesifik.
-
-**Contoh (universal):**
-1. Model perlu mampu memprediksi nilai target dengan akurasi tinggi
-2. Sistem harus dapat mengidentifikasi pola pada citra secara otomatis
-3. Dataset memiliki noise sehingga perlu preprocessing yang tepat
-4. Dibutuhkan model deep learning yang mampu belajar representasi fitur kompleks
-
-**[Tulis problem statements Anda di sini]**
+1. Jumlah fasilitas kesehatan dan tenaga kesehatan antar kabupaten/kota di Provinsi Jawa Timur berpotensi berbeda, sementara jumlah penduduk yang harus dilayani juga tidak sama.
+2. Jumlah fasilitas kesehatan secara langsung belum cukup untuk menggambarkan tingkat kecukupan relatif suatu wilayah tanpa mempertimbangkan jumlah penduduk dan indikator pendukung lainnya.
+3. Diperlukan pendekatan analisis berbasis data untuk mengelompokkan tingkat kecukupan fasilitas kesehatan kabupaten/kota secara konsisten dan dapat dibandingkan.
+4. Perlu diketahui kemampuan model baseline, model machine learning lanjutan, dan model deep learning dalam mengklasifikasikan tingkat kecukupan fasilitas kesehatan berdasarkan data yang tersedia.
 
 ### 3.2 Formulasi Learning Problem (WAJIB)
 
@@ -111,9 +105,9 @@ Rumuskan masalah dalam kerangka *Learning Problem*:
 
 | Komponen | Pertanyaan Panduan | Jawaban Anda |
 |----------|--------------------|--------------|
-| **Target** | Apa yang diprediksi? Jenis tugas (klasifikasi biner/multikelas, regresi, forecasting, clustering, dll.)? | [ ... ] |
-| **Objective** | Apa yang dioptimalkan/diminimalkan secara matematis (misal: cross-entropy, MSE)? Metrik keberhasilan utama? | [ ... ] |
-| **Data** | Sumber, ukuran, jenis, dan asumsi tentang data (i.i.d.? distribusi train vs test?) | [ ... ] |
+| **Target** | Apa yang diprediksi? Jenis tugas (klasifikasi biner/multikelas, regresi, forecasting, clustering, dll.)? | Kategori tingkat kecukupan fasilitas kesehatan kabupaten/kota di Provinsi Jawa Timur, dengan kelas **Rendah**, **Sedang**, dan **Tinggi**. Jenis tugas adalah klasifikasi multikelas. |
+| **Objective** | Apa yang dioptimalkan/diminimalkan secara matematis (misal: cross-entropy, MSE)? Metrik keberhasilan utama? | Melatih model untuk meminimalkan kesalahan klasifikasi terhadap label tingkat kecukupan yang telah ditetapkan berdasarkan indikator/aturan yang transparan. Keberhasilan dibandingkan menggunakan **macro F1-score** sebagai metrik utama, serta accuracy, precision, recall, dan confusion matrix sebagai metrik pendukung. |
+| **Data** | Sumber, ukuran, jenis, dan asumsi tentang data (i.i.d.? distribusi train vs test?) | Data tabular agregat kabupaten/kota di Provinsi Jawa Timur, meliputi jumlah rumah sakit, puskesmas, klinik, dokter, perawat, bidan, jumlah penduduk, serta—jika tersedia dan relevan—luas wilayah dan kepadatan penduduk. Sumber data direncanakan berasal dari BPS Provinsi Jawa Timur dan/atau portal data resmi pemerintah. Tahun dan jumlah observasi final mengikuti kelengkapan data yang berhasil dikumpulkan. |
 
 ### 3.3 Goals
 
@@ -126,7 +120,14 @@ Tujuan harus spesifik, terukur, dan selaras dengan problem statement.
 
 > Sertakan minimal satu goal yang menunjukkan kontribusi terhadap target SDG yang dipilih (Bab 2.2).
 
-**[Tulis goals Anda di sini]**
+1. Mengumpulkan dan menyusun dataset fasilitas kesehatan, tenaga kesehatan, dan jumlah penduduk pada tingkat kabupaten/kota di Provinsi Jawa Timur berdasarkan sumber data yang dapat ditelusuri.
+2. Menentukan indikator dan aturan pelabelan tingkat kecukupan fasilitas kesehatan ke dalam kelas Rendah, Sedang, dan Tinggi secara transparan.
+3. Melakukan data preparation yang sesuai, termasuk pemeriksaan kelengkapan, konsistensi satuan, duplikasi, dan potensi data leakage.
+4. Membangun dan membandingkan tiga model klasifikasi, yaitu Decision Tree sebagai baseline, Random Forest sebagai model advanced, dan MLP sebagai model deep learning.
+5. Mengevaluasi performa ketiga model menggunakan macro F1-score, accuracy, precision, recall, dan confusion matrix pada data test.
+6. Mengidentifikasi pola perbedaan tingkat kecukupan fasilitas kesehatan antar kabupaten/kota di Jawa Timur sebagai informasi pendukung yang relevan dengan SDG 3, khususnya Target 3.8.
+7. Menyusun proyek yang dapat direproduksi melalui notebook, kode, dokumentasi, dan repository GitHub.
+
 
 ### 3.4 Solution Approach  **[M]**
 
@@ -194,6 +195,19 @@ Model deep learning yang sesuai dengan jenis data.
 - ❌ Tidak ada evaluasi pada test set
 
 **[Jelaskan model deep learning yang Anda pilih dan alasannya]**
+#### Model 1 – Baseline Model: Decision Tree Classifier
+
+Decision Tree dipilih sebagai model baseline karena proses pengambilan keputusannya relatif mudah dipahami dan dapat dijelaskan melalui aturan percabangan berdasarkan fitur. Model ini digunakan sebagai pembanding awal untuk mengetahui apakah pola pada data dapat dipelajari dengan pendekatan sederhana. Pembatasan kedalaman pohon dan jumlah minimum sampel pada daun akan dipertimbangkan untuk mengurangi overfitting.
+
+#### Model 2 – Advanced / ML Model: Random Forest Classifier
+
+Random Forest dipilih sebagai model machine learning lanjutan karena menggabungkan sejumlah pohon keputusan yang dilatih pada variasi sampel dan fitur. Pendekatan ensemble ini dapat menangkap hubungan non-linear serta interaksi antarfitur dan umumnya lebih stabil dibanding satu pohon keputusan. Hyperparameter seperti jumlah pohon (*n_estimators*), kedalaman maksimum (*max_depth*), dan jumlah minimum sampel pada daun akan diuji melalui tuning menggunakan data validasi atau cross-validation.
+
+#### Model 3 – Deep Learning Model: Multilayer Perceptron (MLP)
+
+MLP dipilih karena dataset berbentuk tabular dan target merupakan klasifikasi multikelas. MLP akan menggunakan input berupa fitur numerik yang telah diproses, sedikitnya dua hidden layer, fungsi aktivasi ReLU, serta output Softmax untuk menghasilkan probabilitas tiga kelas. Model dilatih minimal 10 epoch, disertai pencatatan training time serta visualisasi training/validation loss dan metric per epoch. Konfigurasi learning rate, batch size, dan regularisasi akan dibandingkan untuk melihat pengaruhnya terhadap performa dan overfitting.
+
+**Batasan pendekatan:** Ketiga model mempelajari label yang dibentuk dari indikator kecukupan, sehingga hasilnya mengukur kemampuan model mereproduksi aturan label tersebut pada data yang belum dilihat. Hasil klasifikasi tidak secara otomatis membuktikan kondisi akses, mutu, atau kinerja layanan kesehatan yang sebenarnya.
 
 ---
 
