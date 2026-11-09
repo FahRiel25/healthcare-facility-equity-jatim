@@ -15,7 +15,7 @@ Analisis dan Klasifikasi Tingkat Kecukupan Fasilitas Kesehatan di Kabupaten/Kota
 **Tahun Akademik:** 2026/2027  
 **Link GitHub Repository:** [https://github.com/FahRiel25/healthcare-facility-equity-jatim.git]  
 **Link Video Pembahasan:** [URL Video (YouTube/Drive)]  
-**SDG yang Dipilih:** SDG 3 – Kehidupan Sehat dan Sejahtera  
+**SDG yang Dipilih:** SDG 3 - Good Health and Well-Being  
 **Target SDG yang Relevan:** Target 3.8 – mencapai cakupan kesehatan universal, termasuk akses terhadap pelayanan kesehatan esensial yang berkualitas.
 
 ---
