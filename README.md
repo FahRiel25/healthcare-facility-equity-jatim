@@ -14,8 +14,9 @@ Repositori ini memuat berkas proposal, perancangan pembelajaran mesin, serta dok
 ## IDENTITAS KELOMPOK
 
 - **Anggota Kelompok:**
-  1. Muhsyam Fahriel Septiansyah — `244311021`
-  2. Dila Alif Regita — `244311010`
+1. Muhsyam Fahriel Septiansyah — `244311021`
+2. Dila Alif Regita — `244311010`
+- **Kelas:** 5A 
 - **Program Studi:** D4 Teknologi Rekayasa Perangkat Lunak
 - **Mata Kuliah:** Data Science
 - **Dosen Pengampu:** Gus Nanang Syaifuddiin, S.Kom., M.Kom.
@@ -27,7 +28,7 @@ Repositori ini memuat berkas proposal, perancangan pembelajaran mesin, serta dok
 
 Struktur direktori dokumentasi pada folder `docs/` dirinci sebagai berikut:
 
-- [docs/Formulir Pengajuan Ide]()
+- [docs/Formulir Pengajuan Ide.md](docs/Formulir%20Pengajuan%20Ide.md)
   Formulir pengajuan ide Checkpoint 1 (Lampiran B) yang memuat rumusan target klasifikasi multikelas, sumber dataset BPS Jawa Timur, rencana tiga model, pertimbangan etika, dan referensi awal.
 - [docs/Laporan_Proyek_ML_LMOP.md](docs/Laporan_Proyek_ML_LMOP.md)
   Draf utama laporan komprehensif yang mencakup kerangka kerja siklus hidup proyek dari tahap perumusan masalah hingga evaluasi model.
