@@ -3,7 +3,7 @@
 | Komponen | Isian Mahasiswa |
 |---|---|
 | Nama / NIM | Dila Alif Regita / 244311010 <br/> Muhsyam Fahriel Septiansyah / 244311021 |
-| Judul ide | Analisis dan Klasifikasi Tingkat Kecukupan Fasilitas Kesehatan di Kabupaten/Kota Provinsi Jawa Timur Menggunakan Machine Learning. |
+| Judul ide | Analisis dan Klasifikasi Tingkat Kecukupan Fasilitas Kesehatan di Kabupaten/Kota Provinsi Jawa Timur. |
 | SDG dan target yang dipilih | Proyek ini berfokus utama pada Goal 3 – Good Health and Well-Being (Kehidupan Sehat dan Sejahtera), khususnya target 3.8 mengenai pencapaian cakupan kesehatan universal dan akses terhadap pelayanan kesehatan esensial yang berkualitas. |
 | Masalah nyata yang diangkat | Ketersediaan fasilitas kesehatan dan tenaga kesehatan berpotensi memiliki distribusi yang berbeda antarwilayah di Jawa Timur. Perbedaan jumlah penduduk dan karakteristik wilayah dapat memengaruhi tingkat kecukupan fasilitas kesehatan. Kondisi tersebut menjadi permasalahan dalam memahami pemerataan ketersediaan fasilitas kesehatan antar kabupaten/kota. Oleh karena itu, diperlukan analisis berbasis data untuk mengklasifikasikan tingkat kecukupan fasilitas kesehatan serta memberikan gambaran mengenai kondisi masing-masing wilayah. |
 | Tugas ML (Target dan jenis tugas) | - Supervised Learning berupa klasifikasi multikelas (Multiclass Classification). <br/><br/> - Target klasifikasi berupa tingkat kecukupan fasilitas kesehatan yang terdiri atas tiga kelas, yaitu Rendah, Sedang, dan Tinggi. <br/><br/> - Klasifikasi dilakukan terhadap data kabupaten/kota di Provinsi Jawa Timur berdasarkan indikator fasilitas kesehatan, tenaga kesehatan, dan karakteristik wilayah. |
