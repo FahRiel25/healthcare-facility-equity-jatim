@@ -212,43 +212,96 @@ MLP dipilih karena dataset berbentuk tabular dan target merupakan klasifikasi mu
 ---
 
 ## 4. DATA UNDERSTANDING  **[L]**
-### 4.1 Informasi Dataset
-**Sumber Dataset:**  
-[Sebutkan sumber: Kaggle, UCI ML Repository, atau sumber lain dengan URL]
+## 4.1 Informasi Dataset
+
+**Sumber Dataset:**
+
+Dataset penelitian diperoleh dari dua sumber utama, yaitu:
+
+1. **Badan Pusat Statistik (BPS) Provinsi Jawa Timur**, yang menyediakan data jumlah penduduk, fasilitas kesehatan, dan tenaga kesehatan menurut kabupaten/kota.
+   - Website: https://jatim.bps.go.id/
+2. **Dinas Kesehatan Provinsi Jawa Timur**, melalui publikasi Profil Kesehatan Provinsi Jawa Timur yang menyediakan data jumlah tempat tidur rumah sakit.
+   - Website: https://dinkes.jatimprov.go.id/
+
+Data yang digunakan merupakan data sekunder dengan periode pengamatan tahun 2018–2025.
 
 **Deskripsi Dataset:**
-- Jumlah baris (rows): [angka]
-- Jumlah kolom (columns/features): [angka]
-- Tipe data: [Tabular / Image / Text / Time Series / Audio / Video]
-- Ukuran dataset: [MB/GB]
-- Format file: [CSV / JSON / Images / TXT / etc.]
 
-### 4.2 Deskripsi Fitur
-Jelaskan setiap fitur/kolom yang ada dalam dataset.
-**Contoh tabel:**
+- Jumlah baris (rows): 304
+- Jumlah kolom (columns/features): 11
+- Tipe data: Tabular
+- Ukuran dataset: [PERLU DILENGKAPI berdasarkan ukuran file CSV]
+- Format file: CSV
+
+Dataset mencakup 38 kabupaten/kota di Provinsi Jawa Timur selama delapan tahun pengamatan, yaitu 2018 sampai 2025. Setiap baris merepresentasikan kondisi fasilitas kesehatan dan tenaga kesehatan pada satu kabupaten/kota dalam satu tahun.
+
+Dataset utama merupakan hasil penggabungan data jumlah penduduk, fasilitas kesehatan, tempat tidur rumah sakit, dan tenaga kesehatan berdasarkan kesamaan wilayah dan tahun pengamatan. Dataset ini digunakan sebagai dasar untuk menganalisis tingkat kecukupan fasilitas kesehatan di setiap kabupaten/kota.
+
+## 4.2 Deskripsi Fitur
+
+Dataset utama terdiri atas 11 kolom yang memuat identitas wilayah, tahun pengamatan, serta jumlah fasilitas dan tenaga kesehatan.
+
 | Nama Fitur | Tipe Data | Deskripsi | Contoh Nilai |
-|------------|-----------|-----------|--------------|
-| id | Integer | ID unik data | 1, 2, 3 |
-| age | Integer | Usia (tahun) | 25, 30, 45 |
-| income | Float | Pendapatan (juta) | 5.5, 10.2 |
-| category | Categorical | Kategori produk | A, B, C |
-| text | String | Teks ulasan | "Produk bagus..." |
-| image | Image | Citra 224x224 RGB | Array 224x224x3 |
-| label | Categorical | Label target | 0, 1 atau "positif", "negatif" |
+|---|---|---|---|
+| Kabupaten_Kota | String | Nama kabupaten atau kota di Provinsi Jawa Timur | Kab. Pacitan |
+| Tahun | Integer | Tahun pengamatan data | 2018 |
+| Jumlah_Rumah_Sakit | Integer | Jumlah rumah sakit umum dan rumah sakit khusus | 5 |
+| Jumlah_Puskesmas | Integer | Jumlah Puskesmas pada suatu wilayah | 24 |
+| Jumlah_Klinik | Float | Jumlah klinik berdasarkan data yang tersedia | 12.0 |
+| Jumlah_Posyandu | Integer | Jumlah Posyandu pada suatu wilayah | 1.250 |
+| Jumlah_Penduduk | Float | Jumlah penduduk pada suatu wilayah dalam satuan jiwa | 588.600 |
+| Jumlah_Tempat_Tidur_RS | Integer | Jumlah tempat tidur rumah sakit, termasuk rumah sakit swasta berdasarkan sumber data | 430 |
+| Jumlah_Dokter | Integer | Jumlah tenaga kesehatan kategori dokter | 150 |
+| Jumlah_Perawat | Integer | Jumlah tenaga kesehatan kategori perawat | 800 |
+| Jumlah_Bidan | Integer | Jumlah tenaga kesehatan kategori bidan | 500 |
 
-**[Buat tabel deskripsi fitur Anda di sini]**
+Variabel Kabupaten_Kota dan Tahun digunakan sebagai identitas pengamatan. Sementara itu, sembilan variabel lainnya menggambarkan jumlah fasilitas dan tenaga kesehatan serta jumlah penduduk pada setiap wilayah.
 
-### 4.3 Kondisi Data
+Variabel Jumlah_Klinik memiliki tipe data float karena terdapat nilai kosong pada data tahun 2018. Sementara itu, Jumlah_Penduduk memiliki tipe data float akibat proses penggabungan dan penyesuaian satuan data.
 
-Jelaskan kondisi dan permasalahan data:
+## 4.3 Kondisi Data
 
-- **Missing Values:** [Ada/Tidak, berapa persen?]
-- **Duplicate Data:** [Ada/Tidak, berapa banyak?]
-- **Outliers:** [Ada/Tidak, pada fitur apa?]
-- **Imbalanced Data:** [Ada/Tidak, rasio kelas?]
-- **Noise:** [Jelaskan jika ada]
-- **Data Quality Issues:** [Jelaskan jika ada masalah lain]
-- **Asumsi Data (i.i.d., distribusi train-test, potensi data leakage):** [Jelaskan]
+Berdasarkan hasil pemeriksaan dataset utama, ditemukan beberapa kondisi dan permasalahan data sebagai berikut.
+
+**Missing Values:**
+
+Terdapat 38 missing values pada fitur Jumlah_Klinik atau sebesar 12,5% dari keseluruhan 304 data. Seluruh nilai kosong tersebut berasal dari tahun 2018 pada 38 kabupaten/kota di Provinsi Jawa Timur.
+
+Nilai kosong dipertahankan dan tidak diubah menjadi nol karena data yang tidak tersedia tidak dapat langsung diartikan sebagai tidak adanya fasilitas klinik. Untuk menjaga konsistensi perhitungan indeks, indikator klinik tidak digunakan dalam pembentukan Indeks Kecukupan Fasilitas Kesehatan.
+
+**Duplicate Data:**
+
+Berdasarkan pemeriksaan kombinasi Kabupaten_Kota dan Tahun, tidak ditemukan data duplikat. Dataset memiliki 304 baris dengan 38 kabupaten/kota dan delapan tahun pengamatan.
+
+**Outliers:**
+
+Pemeriksaan perubahan data antarperiode menunjukkan beberapa nilai yang mengalami perubahan cukup ekstrem. Contohnya adalah jumlah rumah sakit di Kabupaten Tuban yang berubah dari 5 unit pada tahun 2019 menjadi 94 unit pada tahun 2020. Selain itu, jumlah dokter di Kota Surabaya berubah dari 1.084 orang pada tahun 2020 menjadi 8.733 orang pada tahun 2021.
+
+Temuan tersebut merupakan indikasi perubahan ekstrem yang perlu diperiksa lebih lanjut. Penetapan outlier secara statistik menggunakan metode seperti Interquartile Range (IQR) masih perlu dilakukan sebelum menentukan apakah nilai tersebut benar-benar merupakan outlier.
+
+**Imbalanced Data:**
+
+Kondisi ketidakseimbangan kelas belum dapat ditentukan pada tahap Data Understanding karena variabel target berupa kategori Rendah, Sedang, dan Tinggi belum dibentuk. Pemeriksaan distribusi kelas akan dilakukan setelah perhitungan indeks dan klasifikasi menggunakan metode tertiles.
+
+**Noise:**
+
+Beberapa data menunjukkan perubahan jumlah fasilitas dan tenaga kesehatan yang cukup besar antarperiode. Selain itu, terdapat perbedaan penyajian dan definisi kategori pada beberapa publikasi. Kondisi tersebut perlu diperhatikan karena dapat memengaruhi konsistensi perbandingan data antarperiode.
+
+Sebagai contoh, data klinik pada periode awal menggunakan kategori Klinik/Balai Kesehatan, sedangkan publikasi pada periode berikutnya menggunakan kategori Klinik Pratama. Oleh karena itu, perbedaan kategori sumber data perlu diperhatikan dalam interpretasi hasil penelitian.
+
+**Data Quality Issues:**
+
+Beberapa permasalahan kualitas data yang ditemukan meliputi:
+
+1. Perbedaan struktur kolom dan format data pada setiap tahun publikasi.
+2. Perbedaan satuan jumlah penduduk, yaitu data tahun 2018–2024 disajikan dalam ribuan jiwa, sedangkan data tahun 2025 disajikan dalam jiwa.
+3. Terdapat nilai kosong pada data jumlah klinik tahun 2018.
+4. Terdapat perbedaan kategori fasilitas kesehatan antarperiode.
+5. Ditemukan perubahan nilai yang cukup ekstrem pada beberapa variabel.
+6. Terdapat perubahan metodologi proyeksi penduduk pada periode pengamatan.
+
+Selain itu, jumlah rumah sakit dalam dataset utama dihitung dari penjumlahan rumah sakit umum dan rumah sakit khusus. Pada proses tersebut, nilai kosong pada kedua komponen diperlakukan sebagai nol sesuai asumsi pengolahan yang digunakan.
+
 
 ### 4.4 Exploratory Data Analysis (EDA) - (**OPSIONAL**)
 
@@ -292,27 +345,63 @@ Jelaskan kondisi dan permasalahan data:
 
 Bagian ini menjelaskan **semua** proses transformasi dan preprocessing data yang dilakukan.
 ### 5.1 Data Cleaning
-**Aktivitas:**
-- Handling missing values
-- Removing duplicates
-- Handling outliers
-- Data type conversion
-**Contoh:**
-```
-Missing Values:
-- Fitur 'age' memiliki 50 missing values (5% dari data)
-- Strategi: Imputasi dengan median karena distribusi skewed
-- Alasan: Median lebih robust terhadap outliers dibanding mean
-```
+Proses data cleaning dilakukan melalui beberapa tahapan berikut.
 
-**[Jelaskan langkah-langkah data cleaning yang Anda lakukan]**
+**1. Penyesuaian Struktur Data**
+
+Setiap dataset memiliki struktur kolom dan format yang berbeda. Oleh karena itu, dilakukan penyesuaian nama kolom agar memiliki format yang seragam dan mempermudah proses penggabungan.
+
+**2. Normalisasi Nama Wilayah**
+
+Nama kabupaten/kota diseragamkan untuk memastikan data dari berbagai sumber dapat digabungkan berdasarkan identitas wilayah yang sama. Penyesuaian dilakukan terhadap variasi penulisan seperti Kabupaten, Kab., Kab, dan Kota.
+
+**3. Penghapusan Baris yang Tidak Diperlukan**
+
+Baris yang berisi jumlah keseluruhan Provinsi Jawa Timur, judul tabel, keterangan, catatan sumber, dan baris kosong tidak dimasukkan ke dalam dataset utama. Proses ini dilakukan agar data hanya mencakup 38 kabupaten/kota.
+
+**4. Penyesuaian Format Nilai Numerik**
+
+Nilai numerik yang menggunakan tanda pemisah ribuan, spasi, maupun tanda khusus disesuaikan menjadi format numerik agar dapat digunakan dalam perhitungan.
+
+Tanda hubung yang berdasarkan keterangan sumber merepresentasikan nilai nol diubah menjadi nol, sedangkan nilai yang tidak tersedia tetap dipertahankan sebagai missing value.
+
+**5. Penyesuaian Satuan Jumlah Penduduk**
+
+Data jumlah penduduk tahun 2018–2024 disajikan dalam ribuan jiwa sehingga dikalikan dengan 1.000 untuk memperoleh satuan jiwa. Sementara itu, data tahun 2025 sudah menggunakan satuan jiwa sehingga tidak memerlukan konversi.
+
+**6. Pembentukan Jumlah Rumah Sakit**
+
+Jumlah rumah sakit dibentuk melalui penjumlahan jumlah rumah sakit umum dan rumah sakit khusus. Nilai kosong pada kedua komponen diperlakukan sebagai nol sesuai asumsi pengolahan yang digunakan.
+
+**7. Penanganan Missing Values**
+
+Ditemukan 38 missing values pada variabel Jumlah_Klinik yang seluruhnya berasal dari tahun 2018. Nilai tersebut tidak diimputasi dan indikator klinik tidak digunakan dalam perhitungan indeks utama.
+
+**8. Pemeriksaan Duplikasi**
+
+Pemeriksaan duplikasi dilakukan berdasarkan kombinasi Kabupaten_Kota dan Tahun. Hasil pemeriksaan menunjukkan tidak terdapat data duplikat.
+
+Setelah seluruh tahapan dilakukan, diperoleh dataset utama sebanyak 304 baris dan 11 kolom yang mencakup 38 kabupaten/kota selama periode 2018–2025.
 
 ### 5.2 Feature Engineering
 **Aktivitas:**
-- Creating new features
-- Feature extraction
-- Feature selection
-- Dimensionality reduction
+1. Creating New Features
+
+Pembentukan fitur baru dilakukan dengan menggabungkan jumlah rumah sakit umum dan rumah sakit khusus menjadi satu variabel, yaitu Jumlah_Rumah_Sakit. Penggabungan ini bertujuan untuk memperoleh informasi jumlah rumah sakit secara keseluruhan pada setiap kabupaten/kota dan tahun pengamatan.
+
+Selain itu, dilakukan perencanaan pembentukan fitur rasio fasilitas dan tenaga kesehatan terhadap jumlah penduduk. Fitur tersebut nantinya digunakan untuk menggambarkan ketersediaan fasilitas dan tenaga kesehatan secara lebih proporsional antarwilayah.
+
+2. Feature Extraction
+
+Ekstraksi fitur dilakukan dengan memilih informasi yang relevan dari beberapa dataset sumber. Data yang digunakan mencakup jumlah rumah sakit, Puskesmas, klinik, Posyandu, jumlah penduduk, tempat tidur rumah sakit, dokter, perawat, dan bidan.
+
+Data dari berbagai sumber disesuaikan berdasarkan kabupaten/kota dan tahun pengamatan sehingga menghasilkan dataset utama dengan 11 kolom dan 304 baris.
+
+3. Feature Selection
+
+Seleksi fitur dilakukan dengan mempertimbangkan kesesuaian variabel terhadap tujuan penelitian. Variabel yang dipertahankan meliputi jumlah rumah sakit, Puskesmas, klinik, Posyandu, jumlah penduduk, tempat tidur rumah sakit, dokter, perawat, dan bidan.
+
+Identitas kabupaten/kota dan tahun tetap dipertahankan untuk keperluan pengelompokan serta analisis berdasarkan wilayah dan periode pengamatan.
 
 **[Jelaskan feature engineering yang Anda lakukan]**
 
